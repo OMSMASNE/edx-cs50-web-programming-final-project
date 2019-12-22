@@ -46,8 +46,6 @@
 
 * This project is a website for sharing posts and stories.
 
-* The customer's experience:
-
 * The '/' route lands the user at the homepage.
 
 * The recently submitted posts are displayed on the homepage.
