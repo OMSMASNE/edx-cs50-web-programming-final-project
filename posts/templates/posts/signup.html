@@ -1,0 +1,100 @@
+<!--
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+-->
+
+{% extends "posts/base.html" %}
+
+{% load static %}
+
+{% block title %}
+SIGNUP
+{% endblock %}
+
+{% block extraHead %}
+<link rel="stylesheet" href="{% static 'posts/CSS/signup.css' %}" />
+<script src="{% static 'posts/javascript/signup.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="signup">
+
+    <div class="btn-return" id="return-button">
+        <svg class="svg-back-icon" viewBox="0 0 100 100">
+            <line x1="10" y1="50" x2="90" y2="10" stroke="white" stroke-width="5"></line>
+            <line x1="10" y1="50" x2="90" y2="90" stroke="white" stroke-width="5"></line>
+        </svg>
+        <span id="return-button-text">BACK</span>
+    </div>
+
+    <p class="signup-head">
+        CREATE A NEW ACCOUNT!
+    </p>
+    <br>
+    <br>
+
+    <form id="signup-form" action="{% url 'posts:create-account' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="stage-one">
+            <h2 class="form-input-head">USERNAME:</h2>
+            <input class="form-input" type="text" id="username" name="username" placeholder="ENTER USERNAME" />
+            <br>
+            <br>
+            <hr class="form-item-break">
+
+            <h2 class="form-input-head">PASSWORD:</h2>
+            <input class="form-input" type="password" id="password" name="password" placeholder="ENTER PASSWORD" />
+            <br>
+            <br>
+            <hr class="form-item-break">
+        </div>
+
+        <div class="stage-two">
+            <h2 class="form-input-head ">CONFIRM PASSWORD:</h2>
+            <input class="form-input" type="password" id="confirm_password" name="confirm_password" placeholder="ENTER PASSWORD AGAIN" />
+            <br>
+            <br>
+            <hr class="form-item-break">
+        </div>
+
+        <div class="final-stage">
+            <h2 class="form-input-head">EMAIL:</h2>
+            <input class="form-input" type="text" id="email" name="email" placeholder="ENTER EMAIL" />
+            <br>
+            <br>
+            <hr class="form-item-break">
+
+            <h2 class="form-input-head">FIRST NAME:</h2>
+            <input class="form-input" type="text" id="first_name" name="first_name" placeholder="ENTER FIRST NAME" />
+            <br>
+            <br>
+            <hr class="form-item-break">
+
+            <h2 class="form-input-head">LAST NAME:</h2>
+            <input class="form-input" type="text" id="last_name" name="last_name" placeholder="ENTER LAST NAME" />
+            <br>
+            <br>
+            <hr class="form-item-break">
+        </div>
+
+        <br>
+        <br>
+
+        <div class="go-to-home">
+            <a href="{% url 'posts:home' %}">CANCEL and goto HomePage!</a>
+        </div>
+
+        <div class="form-submit" id="form-next-div">
+            <button id="form-next-btn" class="form-submit-button" type="button">NEXT</button>
+        </div>
+
+        <div class="form-submit" id="form-submit-div">
+            <button id="form-submit-btn" class="form-submit-button" type="button">CREATE ACCOUNT!</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

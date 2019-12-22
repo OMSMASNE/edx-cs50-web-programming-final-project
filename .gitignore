@@ -1,0 +1,16 @@
+# Ignore the sqlite database file.
+UniverseDB.sqlite3
+
+# Ignore the compiled python files.
+__pycache__
+*.pyc
+
+# Ignore the extra files folder.
+ExtraFiles/
+
+# Ignore the web-app testing folder.
+postFiles/
+
+# Ignore the editor configuration files.
+.vscode/
+

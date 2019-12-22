@@ -1,0 +1,212 @@
+/*
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+*/
+
+@keyframes hide-card
+{
+    from {
+        opacity: 1;
+        transform: scaleY(1) translateY(0px);
+        line-height: 100%;
+        padding: 2%;
+        margin-bottom: 5%;
+    }
+    to {
+        opacity: 0;
+        /* transform: scaleY(0.5) translateY(-200px); */
+        transform: scaleY(0.5);
+        line-height: 0%;
+        padding: 0;
+        margin-bottom: 0%;
+        border: 0;
+        margin: 0;
+    }
+}
+
+@keyframes introduce-card
+{
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-200px);
+    }
+}
+
+@keyframes fade-in
+{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.page-head
+{
+    background: rgba(0, 0, 0, 0.2);
+    width: 90%;
+    height: auto;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2%;
+    /* animation: hide-card 2s infinite forwards; */
+}
+
+.page-title-head
+{
+    color: blue;
+}
+
+.page-information
+{
+    font-size: 1.2rem;
+    color: rgb(255, 36, 145);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.page-information-divider
+{
+    font-size: 1.2rem;
+    color: rgb(255, 36, 145);
+    display: inline;
+}
+
+.old-posts-container
+{
+    width: auto;
+    overflow: hidden;
+}
+
+#post-editor-container
+{
+    margin: 5%;
+}
+
+.page-head-btn
+{
+    border: none;
+    color: rgb(255, 253, 253);
+    outline: none;
+    background: rgb(70, 37, 255);
+    height: auto;
+    width: auto;
+    padding: 2%;
+    font-size: 1.2rem;
+}
+
+.page-head-btn-disabled
+{
+    border: none;
+    color: rgba(255, 253, 253, 0.5);
+    outline: none;
+    background: rgb(70, 37, 255);
+    height: auto;
+    width: auto;
+    padding: 2%;
+    font-size: 1.2rem;
+}
+
+.btn-style-post
+{
+    outline: none;
+    border: rgb(0, 255, 179) solid;
+    border-radius: 10%;
+    color: rgb(0, 60, 255);
+    height: auto;
+    width: auto;
+    padding: 1%;
+    font-size: 1.2rem;
+    background: transparent;
+}
+
+.btn-style-post:hover
+{
+    color: white;
+    font-size: 1.4rem;
+    background: rgb(0, 255, 128);
+    cursor: pointer;
+}
+
+.btn-style-2
+{
+    outline: none;
+    border: red solid;
+    border-radius: 10%;
+    color: red;
+    height: auto;
+    width: auto;
+    padding: 1%;
+    font-size: 1.2rem;
+    background: transparent;
+}
+
+.btn-style-2-disabled
+{
+    outline: none;
+    border: red solid;
+    border-radius: 10%;
+    color: red;
+    height: auto;
+    width: auto;
+    padding: 1%;
+    font-size: 1.2rem;
+    background: transparent;
+    opacity: 0.5;
+}
+
+.btn-style-2:hover
+{
+    color: white;
+    font-size: 1.4rem;
+    background: red;
+    cursor: pointer;
+}
+
+.page-head-btn:hover
+{
+    background: rgb(23, 19, 255);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#new-post-title-input
+{
+    width: 50%;
+}
+
+#post-edit-btn
+{
+    margin-top: 10px;
+}
+
+#new-post-surface
+{
+    margin: 5%;
+}
+
+#new-post-textarea
+{
+    border: 1px solid grey;
+}
+
+#edit-post-textarea
+{
+    border: 1px solid grey;
+}
+
+@media (max-width:600px)
+{
+    .page-head
+    {
+        width: 95%;
+    }
+}

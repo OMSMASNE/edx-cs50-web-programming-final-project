@@ -1,0 +1,120 @@
+<!--
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+-->
+
+{% extends "posts/base.html" %}
+
+{% load static %}
+
+{% block title %}
+UNIVERSE POST EDITOR
+{% endblock %}
+
+{% block extraHead %}
+<!--
+    rotating shapes outlines background!
+-->
+<link rel="stylesheet" href="{% static 'posts/CSS/navbar.css' %}" />
+<script src="{% static 'posts/javascript/navbarUI.js' %}"></script>
+<link rel="stylesheet" href="{% static 'posts/CSS/post_editor.css' %}" />
+<script src="{% static 'posts/javascript/post_editor.js' %}"></script>
+
+<script src="{% static 'posts/medium-editor/js/medium-editor.js' %}"></script>
+<link rel="stylesheet" href="{% static 'posts/medium-editor/css/medium-editor.css' %}">
+<link rel="stylesheet" href="{% static 'posts/medium-editor/css/themes/default.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<nav class="top-navbar">
+    <a class="nav-list-item-left" id="logo" href="{% url 'posts:home' %}">UNIVERSE</a>
+
+    {% if user_logged_in %}
+        <span class="nav-list-item-left" id="greet-user">WELCOME, {{ username }} !</span>
+        <input id="username" value="{{ username }}" hidden>
+    {% endif %}
+
+    <button class="nav-list-item-right" id="user-icon">
+        <img id="user-icon-img" src="{% static 'posts/images/user.svg' %}" width="50px" height="50px"/>
+    </button>
+</nav>
+
+<div class="dropdown-toggle-list" id="user-dropdown">
+    {% if user_logged_in %}
+        <a class="dropdown-content" href="{% url 'posts:profile' %}">PROFILE</a>
+        <a class="dropdown-content" href="{% url 'posts:post-editor' %}">MANAGE POSTS</a>
+        <a class="dropdown-content" href="{% url 'posts:logout' %}">LOGOUT</a>
+    {% else %}
+        <a class="dropdown-content" href="{% url 'posts:signup' %}">CREATE ACCOUNT</a>
+        <a class="dropdown-content" href="{% url 'posts:login' %}">LOGIN</a>
+    {% endif %}
+</div>
+
+<div class="page-head" id="page-head-id">
+    <h1 class="page-title-head">Create a new post or edit an old one!</h1>
+
+    <p class="page-information">Select the new post button to create a new post.</p>
+    <p class="page-information">OR</p>
+    <p class="page-information">Choose to edit your old post by selecting it from the dropdown list.</p>
+
+    <div class="page-option-chooser">
+        <button class="page-head-btn" id="create-new-post-btn">CREATE NEW POST!</button>
+        <br>
+        <br>
+        <div class="old-posts-container">
+            {% if old_posts %}
+                <select class="old-posts" id="old-posts-selection">
+                    {% for post_title, post_id in previous_posts %}
+                        <option value="{{ post_title }}" data-id="{{ post_id }}">{{ post_title }}</option>
+                    {% endfor %}
+                </select>
+                <button class="page-head-btn" id="post-edit-btn">EDIT NOW!</button>
+            {% else %}
+                <span>You have no previous posts!</span>
+                <button class="page-head-btn-disabled" id="post-edit-btn" disabled>EDIT NOW!</button>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div id="new-post-surface">
+    <h1 class="page-title-head">Create a new post!</h1>
+    <p class="page-information">Choose a title:</p>
+    <input id="new-post-title-input" placeholder="Choose a title for your post!">
+    <button id="submit-new-post-btn" class="btn-style-post">Preview and POST!</button>
+    <br>
+    <br>
+    <button class="btn-style-2" id="upload-post">Upload your post</button>
+    <input id="file-upload-input" name="file-upload-input" type="file" accept=".txt,.md" hidden>
+    <p class="page-information-divider">OR</p>
+    <button class="btn-style-2" id="write-post-here">Write it here.</button>
+    <br>
+    <br>
+
+    <div id="file-to-upload-name-container">
+        <span>Selected file : <span id="selected-file-name-display"></span></span>
+    </div>
+
+    <br>
+
+    <div class="post-editor" id="new-post-creator">
+        <div id="new-post-textarea" class="editable"></div>
+    </div>
+</div>
+
+<div id="post-editor-container">
+    <h1 class="page-title-head">Edit old post!</h1>
+    <p class="page-information">You can edit the title and the post body:</p>
+    <input id="edit-post-title-input">
+    <button id="save-post-btn" class="btn-style-post">SAVE POST!</button>
+    <br>
+    <br>
+
+    <div class="post-editor" id="old-post-editor">
+        <div id="edit-post-textarea" class="editable"></div>
+    </div>
+</div>
+
+{% endblock %}

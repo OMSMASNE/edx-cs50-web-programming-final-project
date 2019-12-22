@@ -1,0 +1,84 @@
+/*
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+*/
+
+@keyframes square
+{
+    0%
+    {
+        transform: translateY(0);
+    }
+    100%
+    {
+        transform: translateY(-2000px) rotate(1000deg);
+    }
+}
+
+.bubbles
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transform: translateZ(0);
+    margin: 0;
+    padding: 0;
+}
+
+.bubbles li
+{
+    overflow: hidden;
+    position: absolute;
+    list-style: none;
+    display: block;
+    background-color: rgba(2, 154, 255, 0.25);
+    bottom: -200px;
+    animation: square 20s infinite;
+    transition-timing-function: linear;
+}
+
+.bubbles li:nth-child(1)
+{
+    width: 40px;
+    height: 40px;
+    left: 20%;
+}
+.bubbles li:nth-child(2)
+{
+    width: 100px;
+    height: 100px;
+    left: 40%;
+    animation-delay: 2s;
+    animation-duration: 17s;
+}
+
+.bubbles li:nth-child(3)
+{
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    animation-delay: 4s;
+    animation-duration: 8s;
+}
+
+.bubbles li:nth-child(4)
+{
+    width: 140px;
+    height: 140px;
+    left: 80%;
+    animation-delay: 1s;
+    animation-duration: 22s;
+}
+
+.bubbles li:nth-child(5)
+{
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    animation-delay: 7s;
+    animation-duration: 12s;
+}

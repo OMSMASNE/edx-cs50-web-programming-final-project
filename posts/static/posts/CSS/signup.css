@@ -1,0 +1,210 @@
+/*
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+*/
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes Shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-20deg);
+    }
+    40% {
+        transform: rotate(20deg);
+    }
+    60% {
+        transform: rotate(-20deg);
+    }
+    80% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes Btn-introduce {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes stage-start {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+body {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(45deg, rgb(240, 101, 101), rgb(216, 43, 109), rgb(22, 187, 246), rgb(28, 230, 105));
+    background-size: 400% 400%;
+    animation: Gradient 5s ease infinite;
+}
+
+.btn-return
+{
+    float: left;
+    border: 2px rgb(1, 255, 128);
+    background: rgb(16, 184, 100);
+    color: white;
+    width: 20%;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+}
+
+.svg-back-icon
+{
+    width: 30%;
+    height: 30%;
+}
+
+#return-button-text
+{
+    text-align: right;
+    vertical-align: 5px;
+    font-size: 20px;
+    line-height: 20px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.message
+{
+    color: rgb(70, 240, 126);
+    text-align: center;
+}
+
+.form-item-break
+{
+    border: 1px solid white;
+    opacity: 0.5;
+}
+
+.signup
+{
+    background: rgba(0, 0, 0, 0.5);
+    width: 40%;
+    height: auto;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 20px;
+    color: blue;
+}
+
+.signup-head
+{
+    color: pink;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.form-input-head
+{
+    color: rgb(70, 240, 126);
+    font-size: 20px;
+    float: left;
+    text-align: center;
+}
+
+.form-input
+{
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 4px solid white;
+    width: 40%;
+    height: 40px;
+    float: right;
+    text-align: center;
+}
+
+::placeholder
+{
+    color: white;
+    opacity: 0.8; 
+}
+
+.go-to-home
+{
+    display: block;
+    float: left;
+    border: 4px solid black;
+    padding: 2px;
+    background: yellow;
+}
+
+.form-submit
+{
+    display: block;
+    text-align: center;
+}
+
+.form-submit-button
+{
+    background: rgb(0, 98, 255);
+    color: white;
+    outline: none;
+    border: none;
+    height: auto;
+    width: auto;
+    padding: 4%;
+}
+
+.form-submit-button:hover
+{
+    cursor: pointer;
+    background: rgb(0, 50, 187);
+}
+
+@media (max-width:600px)
+{
+    .signup
+    {
+        width: 80%;
+        text-align: center;
+    }
+
+    .form-input-head
+    {
+        float: none;
+    }
+
+    .form-input
+    {
+        float: none;
+        width: 80%;
+    }
+    
+    .go-to-home
+    {
+        float: none;
+        margin-bottom: 4%;
+    }
+}

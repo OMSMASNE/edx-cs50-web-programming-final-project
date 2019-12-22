@@ -1,0 +1,30 @@
+<!--
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+-->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+
+        <link rel="stylesheet" href="{% static 'posts/bootstrap/bootstrap.min.css' %}"/>
+        <script src="{% static 'posts/javascript/jquery-3.3.1.slim.min.js' %}"></script>
+        <script src="{% static 'posts/javascript/popper.min.js' %}"></script>
+        <script src="{% static 'posts/bootstrap/bootstrap.min.js' %}"></script>
+
+        {% block extraHead %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

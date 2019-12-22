@@ -1,0 +1,66 @@
+<!--
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+-->
+
+{% extends 'posts/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Post
+{% endblock %}
+
+{% block extraHead %}
+<!--
+    rotating shapes outlines background!
+-->
+<link rel="stylesheet" href="{% static 'posts/CSS/navbar.css' %}" />
+<script src="{% static 'posts/javascript/navbarUI.js' %}"></script>
+<link rel="stylesheet" href="{% static 'posts/CSS/post.css' %}" />
+{% endblock %}
+
+{% block body %}
+
+<nav class="top-navbar">
+    <a class="nav-list-item-left" id="logo" href="{% url 'posts:home' %}">UNIVERSE</a>
+
+    {% if user_logged_in %}
+        <span class="nav-list-item-left" id="greet-user">WELCOME, {{ username }} !</span>
+    {% endif %}
+
+    <button class="nav-list-item-right" id="user-icon">
+        <img id="user-icon-img" src="{% static 'posts/images/user.svg' %}" width="50px" height="50px"/>
+    </button>
+</nav>
+
+<div class="dropdown-toggle-list" id="user-dropdown">
+    {% if user_logged_in %}
+        <a class="dropdown-content" href="{% url 'posts:profile' %}">PROFILE</a>
+        <a class="dropdown-content" href="{% url 'posts:post-editor' %}">MANAGE POSTS</a>
+        <a class="dropdown-content" href="{% url 'posts:logout' %}">LOGOUT</a>
+    {% else %}
+        <a class="dropdown-content" href="{% url 'posts:signup' %}">CREATE ACCOUNT</a>
+        <a class="dropdown-content" href="{% url 'posts:login' %}">LOGIN</a>
+    {% endif %}
+</div>
+
+<div id="post-info">
+    <div id="post-title">{{ post_title }}</div>
+    <div id="author-info">Author : {{ author_name }}</div>
+    <div id="post-data">Date: {{ post_date }}</div>
+</div>
+
+<hr id="post-body-separator">
+
+<div id="post-body">{{ post_text |safe }}</div>
+
+<hr id="post-body-separator">
+
+<div id="permanent-link">
+    <p>Share this post with this permanent link:</p>
+    <a href="{{ post_link }}">Permanent Link</a>
+</div>
+
+{% endblock %}

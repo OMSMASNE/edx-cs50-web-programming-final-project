@@ -1,0 +1,52 @@
+<!--
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+-->
+
+{% extends "posts/base.html" %}
+
+{% load static %}
+
+{% block extraHead %}
+<link rel="stylesheet" href="{% static 'posts/CSS/misc.css' %}" />
+
+<script src="{% static 'posts/javascript/misc.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="surface">
+
+    <h1>{{ from }}</h1>
+
+    {% if message %}
+    <h2>{{ message }}</h2>
+    {% endif %}
+
+    <ul>
+        {% if info %}
+            {% for item in info %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+    <div class="go-to-home">
+        <a href="{% url 'posts:home' %}" id="cancel-and-go-back-link">CANCEL and goto HomePage!</a>
+    </div>
+
+    {% if new_account_status %}
+        <div id="extra-status">
+            <input id="new_account_status" value="{{ new_account_status }}">
+        </div>
+    {% endif %}
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

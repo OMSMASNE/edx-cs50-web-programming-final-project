@@ -1,0 +1,112 @@
+/*
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+*/
+
+#message-container
+{
+    display: none;
+}
+
+.surface
+{
+    background: rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: auto;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2%;
+}
+
+#user-info
+{
+    color: rgb(20, 182, 5);
+    font-size: 2rem;
+    display: block;
+    padding: 1% 5% 2% 5%;
+    font-weight: 500;
+}
+
+.user-info-display
+{
+    color: rgb(119, 0, 255);
+    font-size: 2.2rem;
+}
+
+.profile-section-divider
+{
+    border: solid rgb(11, 105, 255) 0.1rem;
+}
+
+.profile-head
+{
+    font-size: 3rem;
+    color: rgb(251, 10, 131);
+}
+
+.section-head
+{
+    color: teal;
+    font-size: 2.5rem;
+}
+.no-recent-posts
+{
+    font-size: 1.8rem;
+    color: rgb(36, 149, 255);
+    overflow: auto;
+    padding: 1% 5% 2% 5%;
+}
+
+.recent-posts
+{
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px;
+    transition: transform 0.5s, box-shadow 0.5s cubic-bezier(0.54, -0.48, 0.51, 1.46);
+    text-align: center;
+    font-size: 1.8rem;
+    color: rgb(36, 149, 255);
+    text-decoration: underline;
+    overflow: auto;
+    padding: 1% 5% 2% 5%;
+}
+
+.recent-posts:hover
+{
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0px 10px 10px;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+@media(max-width:600px)
+{
+    .user-info-display
+    {
+        font-size: 2rem;
+    }
+    .profile-head
+    {
+        font-size: 2rem;
+    }
+    .section-head
+    {
+        font-size: 1.5rem;
+    }
+    .recent-posts
+    {
+        font-size: 1.2rem;
+    }
+    .recent-posts:hover
+    {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,98 @@
+<!--
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+-->
+
+{% extends "posts/base.html" %}
+
+{% load static %}
+
+{% block title %}
+UNIVERSE PROFILE
+{% endblock %}
+
+{% block extraHead %}
+<!--
+    rotating shapes outlines background!
+-->
+<link rel="stylesheet" href="{% static 'posts/CSS/navbar.css' %}" />
+<script src="{% static 'posts/javascript/navbarUI.js' %}"></script>
+<link rel="stylesheet" href="{% static 'posts/CSS/profile.css' %}" />
+<script src="{% static 'posts/javascript/profile.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<nav class="top-navbar">
+    <a class="nav-list-item-left" id="logo" href="{% url 'posts:home' %}">UNIVERSE</a>
+
+    {% if user_logged_in %}
+        <span class="nav-list-item-left" id="greet-user">WELCOME, {{ username }} !</span>
+    {% endif %}
+
+    <button class="nav-list-item-right" id="user-icon">
+        <img id="user-icon-img" src="{% static 'posts/images/user.svg' %}" width="50px" height="50px"/>
+    </button>
+</nav>
+
+<div class="dropdown-toggle-list" id="user-dropdown">
+    {% if user_logged_in %}
+        <a class="dropdown-content" href="{% url 'posts:profile' %}">PROFILE</a>
+        <a class="dropdown-content" href="{% url 'posts:post-editor' %}">MANAGE POSTS</a>
+        <a class="dropdown-content" href="{% url 'posts:logout' %}">LOGOUT</a>
+    {% else %}
+        <a class="dropdown-content" href="{% url 'posts:signup' %}">CREATE ACCOUNT</a>
+        <a class="dropdown-content" href="{% url 'posts:login' %}">LOGIN</a>
+    {% endif %}
+</div>
+
+<div id="message-container">
+    <input id="message" value="{{ message }}" hidden>
+</div>
+
+<div class="surface">
+    <h1 class="profile-head">USER PROFILE:</h1>
+
+    <hr class="profile-section-divider">
+
+    <div class="section-head">User information:</div>
+
+    <div id="user-info">
+        <span class="user-info-container">
+            Username : 
+            <span class="user-info-display">{{ author_username }} </span>.
+        </span>
+        <br>
+        <span class="user-info-container">
+            Name : 
+            <span class="user-info-display">{{ full_name }} </span>.
+        </span>
+        <br>
+        <span class="user-info-container">
+            Email : 
+            <span class="user-info-display">{{ email }}</span>
+        </span>
+    </div>
+
+    <hr class="profile-section-divider">
+
+    <div class="recent-posts-container">
+        <div class="section-head">Your recent posts:</div>
+        {% if recent_posts_status %}
+            {% for post_title, post_link in recent_posts %}
+            <a href="{{ post_link }}">
+                <div class="recent-posts">
+                    {{ forloop.counter }} . {{ post_title }}.
+                </div>
+            </a>
+            {% endfor %}
+        {% else %}
+        <div class="no-recent-posts">
+            You have not created any posts yet!
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

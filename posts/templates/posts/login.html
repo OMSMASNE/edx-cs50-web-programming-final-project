@@ -1,0 +1,56 @@
+<!--
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+-->
+
+{% extends "posts/base.html" %}
+
+{% load static %}
+
+{% block title %}
+LOGIN
+{% endblock %}
+
+{% block extraHead %}
+<link rel="stylesheet" href="{% static 'posts/CSS/signup.css' %}" />
+{% endblock %}
+
+{% block body %}
+
+<div class="signup">
+    <p class="signup-head">
+        ACCOUNT LOGIN!
+    </p>
+    <br>
+    <br>
+
+    <form id="signup-form" action="{% url 'posts:account-login' %}" method="POST">
+        {% csrf_token %}
+
+        <h2 class="form-input-head">USERNAME:</h2>
+        <input class="form-input" type="text" name="username" placeholder="ENTER USERNAME" required />
+        <br>
+        <br>
+        <hr class="form-item-break">
+
+        <h2 class="form-input-head">PASSWORD:</h2>
+        <input class="form-input" type="password" name="password" placeholder="ENTER PASSWORD" required />
+        <br>
+        <br>
+        <hr class="form-item-break">
+
+        <br>
+        <br>
+
+        <div class="go-to-home">
+            <a href="{% url 'posts:home' %}">CANCEL and goto HomePage!</a>
+        </div>
+
+        <div class="form-submit" id="form-submit-div">
+            <button class="form-submit-button" type="submit">LOGIN!</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

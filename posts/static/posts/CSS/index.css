@@ -1,0 +1,116 @@
+/*
+    Copyright (C) 2019 OM SANTOSHKUMAR MASNE. All Rights Reserved.
+    Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only) license.
+    See License.txt in the project root for license information.
+*/
+
+#creator 
+{
+    color: #11ff88;
+    font-weight: bold;
+}
+
+.footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: grey;
+    text-align: center;
+    margin-top: 20px;
+}
+
+body
+{
+    background: url(/postFiles/darren-lawrence-CIKB91GrL1Y-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.surface
+{
+    text-align: center;
+    padding-top: 5%;
+}
+
+.site-information
+{
+    font-family: monospace;
+    color: rgb(253, 52, 186);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.site-information-container
+{
+    background: rgba(255, 255, 255, 0.534);
+}
+
+.separator
+{
+    margin: 5%;
+    width: 90%;
+    border: 5px dashed rgb(0, 255, 85);
+}
+
+#recent-posts
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 2%;
+}
+
+.post-box-link
+{
+    text-decoration: none !important;
+}
+
+.post-box
+{
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px;
+    transition: transform 0.5s, box-shadow 0.5s cubic-bezier(0.54, -0.48, 0.51, 1.46);
+    color: rgb(0, 168, 76);
+}
+
+.post-box:hover
+{
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0px 10px 10px;
+}
+
+.post-box-title
+{
+    font-size: 2rem;
+}
+
+.post-box-author-name
+{
+    display: inline;
+}
+
+.post-box-date
+{
+    margin-left: 10%;
+    display: inline;
+}
+
+.no-posts-note
+{
+    font-family: cursive;
+    font-size: 2rem;
+}
